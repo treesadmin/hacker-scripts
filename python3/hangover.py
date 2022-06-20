@@ -39,12 +39,13 @@ def main():
         client.messages.create(
             to=number_of_boss,
             from_=my_number,
-            body='Gonna work from home. ' + random.choice(excuses),
+            body=f'Gonna work from home. {random.choice(excuses)}',
         )
+
     except TwilioRestException as e:
         # Log errors.
         with LOG_FILE_PATH.open('a') as f:
-            f.write('Failed to send SMS: {}'.format(e))
+            f.write(f'Failed to send SMS: {e}')
         raise
 
 
