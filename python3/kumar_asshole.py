@@ -24,11 +24,7 @@ yagmail.register(GMAIL_USERNAME, GMAIL_PASSWORD)
 
 def send_reply(subject):
     yag = yagmail.SMTP(GMAIL_USERNAME)
-    yag.send(
-        to=KUMAR_EMAIL,
-        subject='RE: {}'.format(subject),
-        contents=REPLY_BODY,
-    )
+    yag.send(to=KUMAR_EMAIL, subject=f'RE: {subject}', contents=REPLY_BODY)
 
 
 def main():
